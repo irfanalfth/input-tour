@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "cli-color": "^2.0.3",
+    "fs-extra": "^10.1.0",
+    "mysql": "^2.18.1",
+    "mysqlconnector": "^2.0.0",
+    "prompt-sync": "^4.2.0",
+    "readline-sync": "^1.4.10"
+  }
+}
