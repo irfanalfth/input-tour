@@ -33,7 +33,7 @@ for (let i = 0; i < splitFile.length; i++) {
   console.log(clc.yellow(`Latitude dan Longitude :`));
 
   do {
-    input = readline.question("=> ");
+    var input = readline.question("=> ");
   } while (!input);
 
   let ll = input.replace(/ /g, "").split(",", 2);
