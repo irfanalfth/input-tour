@@ -12,7 +12,7 @@ var con = mysql.createConnection({
 con.connect(function (err) {
   if (err) throw err;
 
-  let sql = `SELECT * FROM tour WHERE latitude = 0 AND longitude = 0 LIMIT 2`;
+  let sql = `SELECT * FROM tour WHERE latitude = 0 AND longitude = 0`;
 
   con.query(sql, (err, result) => {
     if (err) throw err;
