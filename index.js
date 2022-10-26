@@ -21,7 +21,7 @@ con.connect(function (err) {
     console.log(
       clc.greenBright.bold(result.length) +
         clc.yellow(` data akan di input secara berurutan.\n`) +
-        clc.red(`Pastikan anda input data dengan benar!\n`) +
+        clc.redBright(`Pastikan anda input data dengan benar!\n`) +
         clc.blueBright(`Jika anda salah input maka mengulang dari awal`)
     );
 
