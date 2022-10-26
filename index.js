@@ -12,7 +12,7 @@ var con = mysql.createConnection({
 con.connect(function (err) {
   if (err) throw err;
 
-  let sql = `SELECT * FROM tour WHERE latitude = 0 AND longitude = 0`;
+  let sql = `SELECT * FROM tour WHERE latitude = 0 AND longitude = 0 LIMIT 2`;
 
   con.query(sql, (err, result) => {
     if (err) throw err;
@@ -41,6 +41,10 @@ con.connect(function (err) {
       do {
         var input = readline.question("   => ");
       } while (!input);
+
+      if (input == "-") {
+        input = "0, 0";
+      }
 
       let ll = input.replace(/ /g, "").split(",", 2);
 
