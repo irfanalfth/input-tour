@@ -12,7 +12,7 @@ var con = mysql.createConnection({
 con.connect(function (err) {
   if (err) throw err;
 
-  let sql = `SELECT * FROM tour WHERE latitude = 0 AND longitude = 0 LIMIT 2`;
+  let sql = `SELECT * FROM medical_facility WHERE latitude = 0 AND longitude = 0`;
 
   con.query(sql, (err, result) => {
     if (err) throw err;
@@ -51,7 +51,7 @@ con.connect(function (err) {
 
       let data = [false, 1];
 
-      let sql2 = `UPDATE tour SET latitude = '${ll[0]}',longitude ='${ll[1]}' WHERE tourCode = ${a.tourCode};`;
+      let sql2 = `UPDATE tour SET latitude = '${ll[0]}',longitude ='${ll[1]}' WHERE restaurantCode = ${a.tourCode};`;
 
       con.query(sql2, data, (error, results) => {
         if (error) {
