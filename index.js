@@ -19,21 +19,27 @@ con.connect(function (err) {
 
     console.log("\n");
     console.log(
-      clc.greenBright.bold(result.length) +
-        clc.yellow(` data akan di input secara berurutan.\n`) +
-        clc.redBright(`Pastikan anda input data dengan benar!\n`) +
-        clc.blueBright(`Jika anda salah input maka mengulang dari awal`)
+      `💡 ` +
+        clc.greenBright.bold(result.length) +
+        clc.green(` data akan di input secara berurutan\n`) +
+        clc.yellow(`⚠️ ` + ` Pastikan anda input data dengan benar!\n`) +
+        clc.whiteBright(
+          `🤣 ` + `Jika anda salah input maka mengulang dari awal`
+        )
     );
+
+    let no = 1;
 
     result.forEach((a) => {
       console.log("\n");
       console.log(
-        clc.blueBright.underline(`Cari ${clc.red.bold(a.name)} di google maps`)
+        `${clc.whiteBright.bold(no++)}. ` +
+          clc.whiteBright(`Cari ${clc.redBright.bold(a.name)} di google maps`)
       );
-      console.log(clc.yellow(`Latitude dan Longitude :`));
+      console.log("   " + clc.yellow(`Latitude dan Longitude :`));
 
       do {
-        var input = readline.question("=> ");
+        var input = readline.question("   => ");
       } while (!input);
 
       let ll = input.replace(/ /g, "").split(",", 2);
